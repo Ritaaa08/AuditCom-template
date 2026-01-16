@@ -3,224 +3,349 @@
 
 /* Fond général du site : gris très foncé */
 body {
-    padding-top: 70px; /* hauteur de la navbar */
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #111111; /* gris très foncé */
+    
+    background-color: #111111;
     color: #ffffff;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ========================= */
 /*       NAVIGATION BAR      */
 /* ========================= */
 
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
-
-    background-color: #111111; /* même fond que le site */
-    opacity: 0.5;
+    height: 55px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 40px;
-    z-index: 9999; /* reste au-dessus de tout */
-    border-bottom: 1px solid #222;
+    padding: 0 60px;
+
+    background: rgba(17, 17, 17, 0.6); /* transparent */
+    backdrop-filter: blur(12px);       /* effet glass */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    z-index: 9999;
+    animation: navbarFade 0.6s ease-out forwards;
+}
+
+@keyframes navbarFade {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .nav-logo {
-    height: 40px;
-    object-fit: contain;
+    height: 38px;
+    opacity: 0.9;
+    transition: 0.3s;
 }
 
-.nav-button {
-    background-color: #ab28bf; /* violet */
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
+.nav-logo:hover {
+    opacity: 1;
 }
+
 
 .nav-button:hover {
-    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 255, 0.35);
 }
 
 
 
 /* ========================= */
-/*     HERO CONTENT BLOCK    */
+/*       HERO CONTENT        */
 /* ========================= */
 
 #heroContent {
-    width: 100%;
-    min-height: 100vh; /* occupe toute la hauteur de l’écran */
-    background-color: #3bd04a;
-    padding: 0 40px; /* réduit car on centre verticalement */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+  background-color: #e8ff08;
+}
 
-    overflow: hidden; /* empêche le texte de pousser la section */
+#heroContent .hero-bg {
+  position: absolute;
+  top: 0;
+  right: -280px;
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 999; /* au-dessus de tout */
+  pointer-events: none;
 }
 
 
 .heroContent-inner {
-    max-width: 900px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.heroContent-wrapper {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent-pretitle {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1;
 }
 
 .heroContent-title {
-    font-size: 84px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #000;
+  letter-spacing: -2px;
+  position: relative;
+  z-index: 1;
 }
 
 .heroContent-description {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 40px;
+  font-weight: 400;
 }
 
 .heroContent-button {
-    background-color: #ab28bf; /* violet */
-    color: white;
-    border: none;
-    padding: 16px 40px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: 0.2s;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .heroContent-button:hover {
-    opacity: 0.85;
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.heroContent-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-bg {
+  z-index: 9999;
 }
 
 
+/* ========================= */
+/*       BOUTON A DROIT       */
+/* ========================= */
 
+.floating-download {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
 
+    background-color: #ffffff;
+    color: rgb(14, 13, 13);
+    border: none;
+    padding: 16px 32px;
+    border-radius: 9px;
 
-/* Section hero (haut de page) */
-.hero {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    
+    transition: 0.25s;
+    z-index: 9999;
+}
+
+.floating-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.45);
+}
+
+/* ========================= */
+/*       HERO SECTION        */
+/* ========================= */
+
+#heroSection {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* scroll-lock */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 80px;
+    padding: 120px 80px;
+    overflow: hidden;
 }
 
-/* Colonne gauche : texte */
-.hero-content {
-    max-width: 50%;
+/* Texte à gauche */
+.hero-left {
+    width: 45%;
+    z-index: 2;
 }
 
 .hero-title {
-    font-size: 48px;
-    color: #3bd04a; /* vert vif */
-    margin: 0 0 20px;
+    font-size: 64px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
 }
 
 .hero-text {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
-    margin: 0 0 30px;
-    color: #e0e0e0;
+    color: rgba(255,255,255,0.8);
 }
 
-/* Bouton violet */
-.hero-button {
-    background-color: #ab28bf; /* violet */
-    color: #ffffff;
-    border: none;
-    padding: 14px 32px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 999px;
-    cursor: pointer;
-}
-
-.hero-button:hover {
-    opacity: 0.9;
-}
-
-/* Colonne droite : image placeholder */
-.hero-image {
-    max-width: 40%;
+/* Colonne d’images à droite */
+.hero-right {
+    width: 45%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.image-placeholder {
-    width: 260px;
-    height: 260px;
-    border-radius: 24px;
-    border: 2px dashed #ab28bf;
-    color: #ab28bf;
+.hero-images-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* masque les images */
+}
+
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
+    flex-direction: column;
+    gap: 40px;
+    transition: transform 0.1s linear;
+}
+
+.hero-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 
 
-
-img {
-    width: 250px;
-}
-
+/* ========================= */
+/*     MAP     */
+/* ========================= */
 
 
+/* SECTION MAP */
 #mapContainer {
     position: relative;
-    max-width: 900px;
-    margin: 2rem auto 2rem 0;
+    padding: 0 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
-svg {
-    max-width: 100%;
-    height: auto;
+/* SVG MAP agrandie + ombre */
+#mapContainer svg {
+     width: 100%;
+      height: auto;
+       max-height: 90vh;
+        display: block; 
+        margin: 0 auto; 
+        box-shadow: none; 
+  }
+
+#mapContainer svg:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
-.canton-label {
-    font-size: 12px;
-    font-weight: bold;
-    fill: rgb(255, 255, 255);
-    cursor: pointer;
-    user-select: none;
+.map-logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
 }
 
+/* PANNEAU DE LOGOS */
 #logoPanel {
     position: absolute;
-    top: 120px;
-    right: -200px;
+    top: 50%;
+    right: 40px; /* plus à droite */
+    transform: translateY(-50%);
     display: none;
     flex-direction: column;
-    gap: 0.3rem;
-    width: 150px;
-    background: none;     /* plus de fond */
-    padding: 0;           /* plus de padding */
-    box-shadow: none;     /* plus d'ombre */
+    gap: 16px;
+    z-index: 10;
+}
+
+.map-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0px;
+}
+
+/* LOGOS AGRANDIS + ANIMATION */
+.map-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+
+    opacity: 0;
+    transform: translateX(20px);
+    animation: logoFade 0.6s ease forwards;
+}
+
+@keyframes logoFade {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
+#logoPanel {
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 12px;
+}
 
-#logoPanel img {
-    width: 85px;
+.map-logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
 }

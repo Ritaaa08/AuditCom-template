@@ -20,29 +20,30 @@ window.addEventListener("load", () => {
                 "FC Dardania Lausanne",
                 "FC Amical St-Prex",
                 "Vevey-Sports",
-                "FC Echallens Région",
+                "FC Echallens",
                 "FC Stade-Payerne",
                 "FC La Sarraz-Eclépens",
-                "FC Stade Lausanne Ouchy (SLO)",
+                "FC Stade Lausanne Ouchy",
                 "Yverdon Sport FC",
                 "FC Stade Nyonnais"
             ],
             "label-fr": ["FC Bulle"],
             "label-vs": ["FC Sion", "FC Martigny-Sports", "FC Monthey"],
             "label-ge": [
-                "FC Kosova (Genève)",
+                "FC Kosova",
                 "Lancy FC",
                 "CS Chênois",
                 "FC Grand-Saconnex",
-                "Étoile Carouge FC"
+                "Etoile Carouge",
+                "Meyrin FC"
             ],
             "label-ne": [
                 "Neuchâtel Xamax FCS",
-                "FC Biel-Bienne 1896",
+                "FC Biel-Bienne1896",
                 "FC Saint-Blaise"
             ],
             "label-ju": [
-                "Sports-Réunis Delémont (SR Delémont)",
+                "Sports-Réunis Delémont",
                 "FC Bassecourt",
                 "FC Ajoie-Monterri",
                 "CS Romontois"
@@ -59,9 +60,15 @@ window.addEventListener("load", () => {
                 list.forEach(club => {
                     if (clubs[club]) {
                         const img = document.createElement("img");
-                        img.src = clubs[club];
-                        img.alt = club;
-                        logoPanel.appendChild(img);
+img.src = clubs[club];
+img.alt = club;
+img.classList.add("map-logo"); //  AJOUT ESSENTIEL
+logoPanel.appendChild(img);
+
+
+void img.offsetWidth;
+img.style.animation = "logoFade 0.6s ease forwards";
+
                     }
                 });
 
