@@ -1,0 +1,169 @@
+/* Statistics Section */
+#statisticsSection {
+  background-color: #AB28BF;
+  color: white;
+  padding: 80px 40px;
+  margin: 60px 0;
+}
+
+.statistics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: white;
+  opacity: 0;
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  width: 100%;
+}
+
+.stat-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.stats-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+  display: block;
+  min-height: 60px;
+}
+
+.stats-unit {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-left: 5px;
+}
+
+.stats-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.stats-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  #statisticsSection {
+    padding: 60px 30px;
+  }
+
+  .stats-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+
+  .stats-value {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #statisticsSection {
+    padding: 40px 20px;
+    margin: 40px 0;
+  }
+
+  .stats-title {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .stat-card {
+    padding: 30px 20px;
+  }
+
+  .stats-value {
+    font-size: 2rem;
+    min-height: 45px;
+  }
+
+  .stats-label {
+    font-size: 1.1rem;
+  }
+
+  .stats-description {
+    font-size: 0.9rem;
+  }
+}

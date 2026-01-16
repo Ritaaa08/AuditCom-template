@@ -1,0 +1,143 @@
+/* Carousel Section */
+#carouselSection {
+  background-color: #2a2a2a;
+  padding: 80px 40px;
+  margin: 60px 0;
+  overflow: hidden;
+}
+
+.carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: white;
+}
+
+/* Carousel styling */
+.carousel {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  animation: scroll-left 40s linear infinite;
+  padding: 20px 0;
+}
+
+.carousel-1 {
+  animation: scroll-left 40s linear infinite;
+}
+
+.carousel-2 {
+  animation: scroll-right 40s linear infinite;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.carousel-item:hover {
+  /* Pas d'effet au survol */
+}
+
+.carousel-item img {
+  max-width: 100%;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.carousel-label {
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+/* Animations */
+/* Animations */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-0.5 * var(--total-width)));
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(calc(-0.5 * var(--total-width)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  #carouselSection {
+    padding: 60px 30px;
+  }
+
+  .carousel-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+
+  .carousel-item {
+    width: 130px;
+    height: 130px;
+  }
+
+  .carousel-item img {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 110px;
+    height: 110px;
+  }
+
+  .carousel-item img {
+    max-height: 80px;
+  }
+
+  .carousel-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    width: 90px;
+    height: 90px;
+  }
+
+  .carousel-item img {
+    max-height: 60px;
+  }
+
+  .carousel-label {
+    font-size: 0.7rem;
+  }
+}
