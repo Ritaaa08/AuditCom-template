@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <script src="src/main.js" type="module" defer></script>
     <script src="src/map.js" type="module" defer></script>
     <link rel="stylesheet" href="css/stats.css">
@@ -16,51 +20,99 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cantonDropdown.css">
     <script src="src/cantonDropdown.js" type="module" defer></script> 
+    <script src="src/heroScroll.js" type="module" defer></script>
+    <script src="src/date.js" type="module" defer></script>
+    <script src="src/heroImagesScroll.js" type="module" defer></script>
+
 
 
 </head>
 
-
     <body>
-      <p>Teste</p>
-
-        <!-- ========================= -->
+      
+         <!-- ========================= -->
         <!--        NAVBAR SECTION       -->
         <!-- ========================= -->
         <nav class="navbar">
-            <div class="nav-left">
-                <img src="assets/logo.png" alt="Logo du site" class="nav-logo">
-            </div>
+          <div class="nav-left">
+              <img src="logo.png" class="nav-logo">
+          </div>
+      
+          <div class="nav-right">
+              <span id="currentDate" class="nav-date"></span>
+          </div>
+      </nav>
+      
+
+
         
-            <div class="nav-right">
-                <button class="nav-button">Télécharger</button>
-            </div>
-        </nav>
-        
-    
-    
-    
+      <button class="floating-download">Télécharger</button>
+
+
+
+      
         <!-- ========================= -->
         <!--     HERO CONTENT    -->
         <!-- ========================= -->
         
-        <section id="heroContent">
-            <div class="heroContent-inner">
-                <h2 class="heroContent-title">THE BEST BURGER IN TOWN</h2>
-        
-                <p class="heroContent-description">
-                    Welcome to Burger Bliss, where we take your cravings to a whole new level!
-                    Our mouthwatering burgers are made from 100% beef and are served on freshly baked buns.
-                </p>
-        
-                <button class="heroContent-button">Télécharger</button>
-            </div>
-        </section>
+ 
+
+<section id="heroContent">
+  <img src="first.png" alt="" class="hero-bg">
+
+  <div class="heroContent-inner">
+    <div class="heroContent-wrapper">
+      <p class="heroContent-pretitle">Analyse digitale</p>
+      
+      <h2 class="heroContent-title">
+        CARTON ROUGE<br>POUR VOTRE<br>STRATÉGIE DIGITALE
+      </h2>
+
+      <p class="heroContent-description">
+        Ce rapport d'audit exhaustif analyse en profondeur la visibilité, la performance technique et la stratégie de communication de 28 clubs de football de Suisse romande.
+      </p>
+
+      <button class="heroContent-button">Télécharger</button>
+    </div>
+  </div>
+</section>
+      <!--  -->
+
+<!-- ========================= -->
+<!--       HERO SECTION        -->
+<!-- ========================= -->
+
+<section id="heroSection">
+  <div class="hero-left">
+      <h2 class="hero-title">THE BURGER</h2>
+      <p class="hero-text">
+          Welcome to Burger Bliss, where we take your cravings to a whole new level!
+          Our mouthwatering burgers are made from 100% beef and are served on freshly baked buns.
+      </p>
+  </div>
+
+  <div class="hero-right">
+      <div class="hero-images-wrapper">
+          <div class="hero-images">
+              <img src="1.jpg" class="hero-img">
+              <img src="6.jpg" class="hero-img">
+              <img src="8.jpg" class="hero-img">
+              <img src="4.jpg" class="hero-img">
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
         
         <!-- ========================= -->
         <!--         MAP SECTION       -->
         <!-- ========================= -->
         <section id="mapContainer">
+          <h2 class="map-title">CLUBS PAR CANTON</h2>
+          <p class="heroContent-description"> 6 régions. 28 clubs. Une seule question : Votre club est-il à la hauteur ?</p>
 
             <!-- On va coller le SVG ici -->
            
@@ -105,12 +157,13 @@
            
            
                <!-- Labels des cantons -->
-        <text id="label-ge" class="canton-label" x="20" y="490">GENEVE</text>
-        <text id="label-vd" class="canton-label" x="120" y="330">VAUD</text>
-        <text id="label-vs" class="canton-label" x="400" y="500">VALAIS</text>
-        <text id="label-fr" class="canton-label" x="270" y="300">FRIBOURG</text>
-        <text id="label-ne" class="canton-label" x="150" y="230">NEUCHATEL</text>
-        <text id="label-ju" class="canton-label" x="210" y="180">JURA</text>
+        <text id="label-ge" class="canton-label" x="20" y="490">GE</text>
+        <text id="label-vd" class="canton-label" x="120" y="330">VD</text>
+        <text id="label-vs" class="canton-label" x="400" y="500">VS</text>
+        <text id="label-fr" class="canton-label" x="270" y="300">FR</text>
+        <text id="label-ne" class="canton-label" x="150" y="230">NE</text>
+        <text id="label-ju" class="canton-label" x="200" y="200">JU</text>
+        
     </svg>
            
             </svg>
