@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="src/main.js" type="module" defer></script>
     <script src="src/map.js" type="module" defer></script>
+    <link rel="stylesheet" href="css/stats.css">
+    <script src="src/stats.js" type="module" defer></script>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="src/form.js" type="module" defer></script>
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="src/carousel.js" type="module" defer></script> 
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cantonDropdown.css">
+    <script src="src/cantonDropdown.js" type="module" defer></script> 
 
 
 </head>
@@ -115,39 +124,105 @@
         <!-- ========================= -->
         <!--      STATISTICS SECTION   -->
         <!-- ========================= -->
-        <section id="statsSection">
-            <div class="stat-box">17M BURGER EATERS AND COUNTING</div>
-            <div class="stat-box">+95% CUSTOMER SATISFACTION</div>
-            <div class="stat-box">+95% CUSTOMER SATISFACTION</div>
-            <div class="stat-box">+95% CUSTOMER SATISFACTION</div>
-        </section>
-    
+        <section id="statisticsSection">
+  <div class="statistics-container" id="statisticsContainer">
+    <h2 class="stats-title">CHIFFRES CLÉS DE L'ÉCOSYSTÈME DIGITAL</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stats-value" data-value="8" data-float="false">0</span>
+        <span class="stats-label">EcoIndex</span>
+        <p class="stats-description">Score alarmant de certains clubs professionnels (Yverdon Sport FC), soulignant une structure web extrêmement énergivore.</p>
+      </div>
+      
+      <div class="stat-card">
+        <span class="stats-value" data-value="2200" data-float="false">0</span>
+        <span class="stats-label">Backlinks</span>
+        <p class="stats-description">Nombre impressionnant de liens retour pour des clubs historiques comme le SR Delémont, témoignant d'une autorité numérique bâtie sur 30 ans.</p>
+      </div>
+      
+      <div class="stat-card">
+        <span class="stats-value" data-value="71.11" data-float="true">0</span><span class="stats-unit">%</span>
+        <span class="stats-label">Trafic Mobile</span>
+        <p class="stats-description">Part du trafic mobile pour un club comme le Lancy FC, rendant l'optimisation "Mobile-First" absolument vitale pour l'engagement des supporters.</p>
+      </div>
+      
+      <div class="stat-card">
+        <span class="stats-value" data-value="29" data-float="false">0</span><span class="stats-unit">s</span>
+        <span class="stats-label">Temps de Chargement</span>
+        <p class="stats-description">Temps critique observé sur certains sites (US Terre Sainte), un frein majeur à la rétention des utilisateurs.</p>
+      </div>
+    </div>
+  </div>
+</section>
     
     
         <!-- ========================= -->
         <!--     DOWNLOAD FORM         -->
         <!-- ========================= -->
         <section id="downloadSection">
-            <h2 class="section-title">FORMULAIRE DE TÉLÉCHARGEMENT</h2>
+  <div class="download-container">
+    <h2 class="section-title">FORMULAIRE DE TÉLÉCHARGEMENT</h2>
+
+    <form id="downloadForm">
+      
+      <div class="form-group">
+        <label for="firstname">Prénom</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Nom</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Votre nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span style="color: #ff6b6b;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="votre.email@example.com" required>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms" class="checkbox-label">J'accepte les conditions de téléchargement et je reconnais avoir lu la politique de confidentialité.</label>
+      </div>
+
+      <button type="submit" class="form-button">Télécharger le rapport</button>
+    </form>
+  </div>
+</section>
     
-            <!-- ⚠️ On garde ton formulaire EXACT -->
-            <form id="downloadForm"></form>
+        <!-- ========================= -->
+        <!--     CAROUSEL SECTION      -->
+        <!-- ========================= -->
+        <section id="carouselSection">
+          <div class="carousel-container">
+          <h2 class="carousel-title">NOS CLUBS PARTENAIRES</h2>
+          <div id="carouselContainer"></div>
+          </div>
         </section>
-    
+
     
     
         <!-- ========================= -->
         <!--          FOOTER           -->
         <!-- ========================= -->
         <footer id="footerSection">
-            <div class="footer-grid">
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-            </div>
+          <div class="footer-container">
+                <div class="footer-content">
+                    <h2 class="footer-title">CONTACTEZ-NOUS</h2>
+                    
+                    <div class="footer-grid">
+                        <div class="footer-column footer-creators">
+                            <p><strong>Créatrice :</strong> <span>Demakova Margarita</span></p>
+                            <p><strong>Créateur :</strong> <span>Barroso Cahungo Francisco</span></p>
+                        </div>
+                        
+                        <div class="footer-column footer-emails">
+                            <p><strong>Mail :</strong> <a href="mailto:email1@example.com">margarita.demakova@heig-vd.ch</a></p>
+                            <p><strong>Mail :</strong> <a href="mailto:email2@example.com">francisco.barrosocahungo@heig-vd.ch</a></p>
+                        </div>
+                    </div>
+                </div>
+              </div>
         </footer>
     
     
