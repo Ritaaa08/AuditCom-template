@@ -77,12 +77,14 @@ body {
 #heroContent .hero-bg {
   position: absolute;
   top: 0;
-  right: -280px;
-  width: 80%;
+  right: -250px;
+  width: 90%;
   height: 100%;
   object-fit: cover;
   z-index: 999; /* au-dessus de tout */
   pointer-events: none;
+
+
 }
 
 
