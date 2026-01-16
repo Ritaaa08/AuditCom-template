@@ -84,9 +84,7 @@ body {
   z-index: 999; /* au-dessus de tout */
   pointer-events: none;
 
-
 }
-
 
 .heroContent-inner {
   position: relative;
@@ -175,8 +173,8 @@ body {
     bottom: 32px;
     right: 32px;
 
-    background-color: #ffffff;
-    color: rgb(14, 13, 13);
+    background-color: #ab28bf;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 16px 32px;
     border-radius: 9px;
@@ -217,7 +215,7 @@ body {
 }
 
 .hero-title {
-    font-size: 64px;
+    font-size: 40px;
     font-weight: 900;
     color: white;
     margin-bottom: 20px;
@@ -276,6 +274,7 @@ body {
     padding: 0 100px;
     margin-top: 80px;
     margin-bottom: 80px;
+    
 }
 
 /* SVG MAP agrandie + ombre */
@@ -350,4 +349,36 @@ body {
 .map-logo:hover {
     transform: scale(1.1);
     transition: transform 0.2s ease;
+}
+
+/* --- MAP NOIRE + CONTOURS BLANCS --- */
+
+/* Toutes les formes de la carte */
+#mapContainer svg .st0,
+#mapContainer svg .st1,
+#mapContainer svg .st2,
+#mapContainer svg .st3 {
+    fill: #000 !important;        /* noir */
+    stroke: #fff !important;      /* contours blancs */
+}
+
+/* Labels des cantons */
+#mapContainer svg .canton-label {
+    fill: #fff !important;        /* texte blanc */
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* Masquer les sections AuditCom */
+h1[data-bind-global="count"] {
+  display: none;
+}
+ 
+#teamList {
+  display: none;
+}
+ 
+#messageContainer {
+  display: none;
 }
