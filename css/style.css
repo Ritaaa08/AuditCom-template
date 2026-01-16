@@ -311,11 +311,14 @@ body {
 
 .map-title {
     text-align: center;
-    font-size: 48px;
-    font-weight: 900;
-    color: white;
-    margin-bottom: 0px;
+    font-size: 64px;          /* plus grand */
+    font-weight: 800;         /* un peu moins “lourd” que 900 */
+    color: #ffffff;
+    margin-bottom: 40px;      /* espace entre le titre et la map */
+    letter-spacing: 1px;      /* plus moderne */
+    line-height: 1.1;         /* compact et élégant */
 }
+
 
 /* LOGOS AGRANDIS + ANIMATION */
 .map-logo {
@@ -381,4 +384,16 @@ h1[data-bind-global="count"] {
  
 #messageContainer {
   display: none;
+}
+
+.heroContent-description {
+    font-size: 24px;          /* plus grand */
+    line-height: 1.5;
+    color: #222;              /* plus doux que #555 */
+    margin-bottom: 40px;
+    font-weight: 500;
+    text-align: center;       /* centré */
+    max-width: 700px;         /* largeur idéale */
+    margin-left: auto;        /* centré horizontalement */
+    margin-right: auto;       /* centré horizontalement */
 }
